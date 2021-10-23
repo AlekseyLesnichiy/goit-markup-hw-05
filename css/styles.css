@@ -40,6 +40,28 @@ p {
 }
 
 /* Header */
+.navigate-block::after {
+  content: "";
+  display: block;
+  position: absolute;
+  background: var(--accent-color);
+  border-radius: 2px;
+  width: 100%;
+  height: 4px;
+  bottom: -1px;
+}
+/* .current-page {
+  display: block;
+  position: absolute;
+  background: var(--accent-color);
+  border-radius: 2px;
+  width: 100%;
+  height: 4px;
+} */
+.navigate-block {
+  position: relative;
+}
+
 .header {
   border-bottom: 1px solid #eeeeee;
   background-color: var(--white-color);
@@ -151,6 +173,49 @@ p {
 
 /* Section Hero */
 
+.backdrop {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+
+  background-color: rgba(0, 0, 0, 0.2);
+}
+.backdrop.is-hidden {
+  opacity: 0;
+  pointer-events: none;
+}
+.modal {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 528px;
+  height: 581px;
+  transform: translate(-50%, -50%);
+
+  background: var(--white-color);
+  box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 1px 1px rgba(0, 0, 0, 0.14),
+    0px 2px 1px rgba(0, 0, 0, 0.2);
+  border-radius: 4px;
+}
+.close-button {
+  position: absolute;
+  top: 0;
+  right: 0;
+  display: block;
+  border-radius: 50%;
+  background-color: var(--white-color);
+  color: var(--accent-color);
+  height: 30px;
+  width: 30px;
+}
+/* .close-icon {
+  height: 30px;
+  width: 30px;
+  border-radius: 50%;
+} */
+
 .title-hero {
   margin-bottom: 40px;
 
@@ -179,11 +244,6 @@ p {
 
   cursor: pointer;
 }
-/* .hero-button:hover,
-.hero-button:focus {
-  background-color: var(--accent-color);
-  color: var(--white-color);
-} */
 
 /* Section Advantages */
 
@@ -238,6 +298,28 @@ p {
 
 /* Section Samples,Team */
 
+.image-container {
+  position: relative;
+}
+.image-description {
+  position: absolute;
+  width: 100%;
+  height: 70px;
+  bottom: 0;
+  padding-top: 27px;
+  padding-bottom: 27px;
+  background: rgba(47, 48, 58, 0.8);
+}
+.text-description {
+  font-weight: bold;
+  font-size: 14px;
+  line-height: 1.14;
+  text-align: center;
+  letter-spacing: 0.03em;
+  text-transform: uppercase;
+  color: var(--white-color);
+}
+
 .samples-list,
 .team-list {
   display: flex;
@@ -277,12 +359,7 @@ p {
   background-color: var(--accent-color);
   color: var(--white-color);
 }
-/* .social-icon-team:hover {
-  fill: var(--white-color);
-}
-.social-icon-team:focus {
-  fill: var(--white-color);
-} */
+
 .samples-list .item:not(:last-child) {
   margin-right: 30px;
 }
@@ -363,6 +440,7 @@ p {
 }
 
 /* Footer */
+
 .footer {
   background-color: #2f303a;
   padding-top: 60px;
@@ -467,6 +545,7 @@ p {
 
 /* Portfolio page */
 /* Buttons */
+
 .hidden {
   display: none;
 }
@@ -519,6 +598,27 @@ p {
 }
 
 /* Section of projects */
+
+.projects-section-title-samples .item:hover .portfolio-image-description {
+  opacity: 1;
+}
+
+.portfolio-image-description {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: rgba(33, 150, 243, 0.9);
+  top: 0;
+  left: 0;
+
+  padding: 63px 24px;
+  opacity: 0;
+}
+.portfolio-image-description-text {
+  font-size: 18px;
+  line-height: 1.56;
+  color: var(--white-color);
+}
 
 .projects-section-title-samples .content {
   padding-left: 24px;
